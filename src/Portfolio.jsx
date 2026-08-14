@@ -66,8 +66,8 @@ const PROFILE = {
   phone: "+94 71 418 6644",
   address: "465A, Galle Road, Ambalangoda (80300)",
   mapQuery: "Ambalangoda, Sri Lanka",
-  github: "https://github.com/yourname",
-  linkedin: "https://linkedin.com/in/yourname",
+  github: "https://github.com/VinujaHansinduOfficial/",
+  linkedin: "https://www.linkedin.com/in/vinujahansindu/",
   cvUrl: "/cv.pdf",
   // Put profile.jpg in your project's /public folder.
   photo: "/profile.jpg",
@@ -169,7 +169,15 @@ const PROJECTS = [
     ],
     live: "",
     repo: "https://github.com/yourname/student-wellbeing-ai",
-    shots: ["App home", "Journal analysis", "Risk dashboard", "Forecast view"],
+    // Card thumbnail — put the file at public/projects/mental-health-ai/cover.jpg
+    cover: "/projects/mental-health-ai/cover.jpg",
+    // Carousel media — .jpg/.png screenshots or .mp4 clips, both work.
+    shots: [
+      { label: "App home", src: "/projects/mental-health-ai/1.jpg" },
+      { label: "Journal analysis", src: "/projects/mental-health-ai/2.jpg" },
+      { label: "Risk dashboard", src: "/projects/mental-health-ai/3.jpg" },
+      { label: "Forecast view", src: "/projects/mental-health-ai/4.jpg" },
+    ],
     hue: 265,
   },
   {
@@ -194,7 +202,13 @@ const PROJECTS = [
     ],
     live: "",
     repo: "https://github.com/yourname/frd-attendance",
-    shots: ["Login screen", "Manager dashboard", "Approval history", "Monthly report"],
+    cover: "/projects/frd/cover.jpg",
+    shots: [
+      { label: "Login screen", src: "/projects/frd/1.jpg" },
+      { label: "Manager dashboard", src: "/projects/frd/2.jpg" },
+      { label: "Approval history", src: "/projects/frd/3.jpg" },
+      { label: "Monthly report", src: "/projects/frd/4.jpg" },
+    ],
     hue: 210,
   },
   {
@@ -219,7 +233,13 @@ const PROJECTS = [
     ],
     live: "",
     repo: "https://github.com/yourname/skillsync",
-    shots: ["Landing page", "Job listings", "Freelancer profile", "Client dashboard"],
+    cover: "/projects/skillsync/cover.jpg",
+    shots: [
+      { label: "Landing page", src: "/projects/skillsync/1.jpg" },
+      { label: "Job listings", src: "/projects/skillsync/2.jpg" },
+      { label: "Freelancer profile", src: "/projects/skillsync/3.jpg" },
+      { label: "Client dashboard", src: "/projects/skillsync/4.jpg" },
+    ],
     hue: 175,
   },
   {
@@ -243,7 +263,13 @@ const PROJECTS = [
     ],
     live: "",
     repo: "https://github.com/yourname/legend-of-the-numenor",
-    shots: ["Title screen", "Gameplay", "Level select", "Score screen"],
+    cover: "/projects/numenor/cover.jpg",
+    shots: [
+      { label: "Title screen", src: "/projects/numenor/1.jpg" },
+      { label: "Gameplay", src: "/projects/numenor/gameplay.mp4" },
+      { label: "Level select", src: "/projects/numenor/3.jpg" },
+      { label: "Score screen", src: "/projects/numenor/4.jpg" },
+    ],
     hue: 30,
   },
 ];
@@ -365,6 +391,41 @@ function Photo({ src, alt, className = "", imgClassName = "", fallback, hue = 21
         className={`h-full w-full object-cover ${imgClassName}`}
       />
     </div>
+  );
+}
+
+// Renders a project screenshot (.jpg/.png) or clip (.mp4/.webm) served from /public,
+// and falls back to the gradient block while a file is still missing.
+function Media({ src, label, hue = 210, className = "", big = false }) {
+  const [failed, setFailed] = useState(false);
+  const isVideo = /\.(mp4|webm|mov)$/i.test(src || "");
+
+  if (!src || failed) {
+    return <Placeholder label={label} hue={hue} big={big} className={className} />;
+  }
+
+  if (isVideo) {
+    return (
+      <video
+        src={src}
+        onError={() => setFailed(true)}
+        autoPlay
+        loop
+        muted
+        playsInline
+        aria-label={label}
+        className={`object-cover ${className}`}
+      />
+    );
+  }
+
+  return (
+    <img
+      src={src}
+      alt={label}
+      onError={() => setFailed(true)}
+      className={`object-cover ${className}`}
+    />
   );
 }
 
@@ -671,7 +732,8 @@ function Projects({ onOpen }) {
           {PROJECTS.map((p, i) => (
             <Reveal key={p.id} delay={i * 100}>
               <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-white/5 bg-slate-950/60 transition duration-300 hover:-translate-y-1 hover:border-blue-500/40 hover:shadow-xl hover:shadow-blue-950/50">
-                <Placeholder
+                <Media
+                  src={p.cover}
                   label={`${p.cardTitle} — cover`}
                   hue={p.hue}
                   className="aspect-video w-full"
@@ -946,8 +1008,9 @@ function ProjectPage({ project, onBack }) {
 
         {/* Carousel */}
         <div className="relative mt-12 overflow-hidden rounded-2xl border border-white/10 bg-slate-900">
-          <Placeholder
-            label={`${project.shots[i]} — screenshot ${i + 1} of ${count}`}
+          <Media
+            src={project.shots[i].src}
+            label={`${project.shots[i].label} — screenshot ${i + 1} of ${count}`}
             hue={project.hue + i * 12}
             big
             className="aspect-video w-full"
@@ -969,9 +1032,9 @@ function ProjectPage({ project, onBack }) {
           <div className="flex items-center justify-center gap-2 bg-slate-900 py-4">
             {project.shots.map((s, idx) => (
               <button
-                key={s}
+                key={s.label}
                 onClick={() => setI(idx)}
-                aria-label={`Show ${s}`}
+                aria-label={`Show ${s.label}`}
                 className={`h-2.5 rounded-full transition-all ${
                   idx === i ? "w-7 bg-blue-500" : "w-2.5 bg-slate-600 hover:bg-slate-500"
                 }`}
