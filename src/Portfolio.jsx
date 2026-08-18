@@ -168,7 +168,7 @@ const PROJECTS = [
       "Professional web dashboard for counsellors",
     ],
     live: "",
-    repo: "https://github.com/yourname/student-wellbeing-ai",
+    repo: "https://github.com/VinujaHansinduOfficial/RP_PROJECT_25-26J-278",
     // Card thumbnail — put the file at public/projects/mental-health-ai/cover.jpg
     cover: "/projects/mental-health-ai/cover.jpg",
     // Carousel media — .jpg/.png screenshots or .mp4 clips, both work.
@@ -292,7 +292,7 @@ const PROJECTS = [
       "Fully responsive design",
     ],
     live: "",
-    repo: "https://github.com/yourname/frd-attendance",
+    repo: "https://github.com/my-dev-teams/FRD-Local-Host---Frontend",
     cover: "/projects/frd/cover.png",
     shots: [
       { label: "Login screen", src: "/projects/frd/1.png" },
@@ -324,7 +324,7 @@ const PROJECTS = [
       "Fully responsive design",
     ],
     live: "",
-    repo: "https://github.com/yourname/skillsync",
+    repo: "https://github.com/VinujaHansinduOfficial/ITP_SkillSync_group_Project",
     cover: "/projects/skillsync/cover.png",
     shots: [
       { label: "Landing page", src: "/projects/skillsync/1.png" },
@@ -354,7 +354,7 @@ const PROJECTS = [
       "Lightweight, runs on low-end devices",
     ],
     live: "",
-    repo: "https://github.com/yourname/legend-of-the-numenor",
+    repo: "https://github.com/VinujaHansinduOfficial/Legend-of-the-Numenor",
     cover: "/projects/numenor/cover.jpg",
     shots: [
       { label: "Title screen", src: "/projects/numenor/cover.jpg" }
