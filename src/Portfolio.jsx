@@ -181,6 +181,97 @@ const PROJECTS = [
     hue: 265,
   },
   {
+  id: "great-wild-photography",
+  title: "PHP-Based Wildlife Photographer Portfolio",
+  cardTitle: "Wildlife Photography Portfolio",
+  kind: "Personal Website · PHP · 2026",
+  tagline:
+    "Dynamic wildlife photography portfolio with an interactive gallery, user comments and an admin photo management system.",
+  tech: [
+    "PHP",
+    "MySQL",
+    "JavaScript",
+    "HTML",
+    "CSS",
+    "Apache",
+    "MariaDB",
+  ],
+  about: [
+    "A dynamic personal photography website built for a wildlife photographer to showcase photography work through categorized galleries, location-based content and dedicated portfolio pages.",
+    "The platform includes user registration and authentication, photo likes and comments, while an administrator can manage the photography portfolio through a dedicated dashboard with photo uploads, categories, captions and user management.",
+  ],
+  features: [
+    "Responsive wildlife photography portfolio",
+    "Categorized photo gallery with fullscreen lightbox",
+    "Admin dashboard for managing the photography portfolio",
+    "Drag-and-drop multiple photo uploads",
+    "Photo category and caption management",
+    "User registration and authentication",
+    "Like and unlike functionality for photos",
+    "User comments on uploaded photos",
+    "Admin user and account management",
+    "Location and services pages",
+  ],
+  live: "",
+  repo: "https://github.com/VinujaHansinduOfficial/great-wild",
+  // Card thumbnail — put the file at public/projects/great-wild-photography/cover.jpg
+  cover: "/projects/great-wild-photography/cover.png",
+  // Carousel media — .jpg/.png screenshots or .mp4 clips, both work.
+  shots: [
+    { label: "Photography home page", src: "/projects/great-wild-photography/1.png" },
+    { label: "Photo gallery", src: "/projects/great-wild-photography/2.png" },
+    { label: "Photo comments", src: "/projects/great-wild-photography/3.png" },
+    { label: "Admin dashboard", src: "/projects/great-wild-photography/4.png" },
+  ],
+  hue: 145,
+},
+  {
+  id: "hardware-store-pos",
+  title: "PHP-Based Hardware Store POS System",
+  cardTitle: "Hardware Store POS",
+  kind: "Web Application · Group Project · 2026",
+  tagline:
+    "Web-based point-of-sale system for managing hardware products, inventory and store transactions.",
+  tech: [
+    "PHP",
+    "MySQL",
+    "JavaScript",
+    "AJAX",
+    "HTML",
+    "CSS",
+    "XAMPP",
+  ],
+  about: [
+    "A web-based Point of Sale system designed for hardware stores, developed to streamline product management, inventory operations and daily sales transactions.",
+    "The system uses PHP and MySQL for the backend and database, with AJAX-driven functionality for a more responsive user experience. It includes modular components for store operations, database management and printable transaction outputs.",
+  ],
+  features: [
+    "Hardware product and inventory management",
+    "Point-of-sale transaction processing",
+    "MySQL database integration",
+    "AJAX-based dynamic operations",
+    "Modular PHP architecture",
+    "Printable sales and transaction documents",
+    "Product activation and deactivation instead of permanent deletion",
+  ],
+  live: "",
+  repo: "https://github.com/VinujaHansinduOfficial/hardware_store_pos",
+  // Card thumbnail — put the file at public/projects/hardware-store-pos/cover.jpg
+  cover: "/projects/hardware-store-pos/cover.png",
+  // Carousel media — .jpg/.png screenshots or .mp4 clips, both work.
+  shots: [
+    { label: "POS interface", src: "/projects/hardware-store-pos/1.png" },
+    { label: "Product management", src: "/projects/hardware-store-pos/2.png" },
+    { label: "Inventory management", src: "/projects/hardware-store-pos/3.png" },
+    { label: "Sales and printing", src: "/projects/hardware-store-pos/4.png" },
+    { label: "", src: "/projects/hardware-store-pos/5.png" },
+    { label: "", src: "/projects/hardware-store-pos/6.png" },
+    { label: "", src: "/projects/hardware-store-pos/7.png" },
+    { label: "", src: "/projects/hardware-store-pos/8.png" },
+  ],
+  hue: 35,
+},
+  {
     id: "frd",
     title: "FRD Security Attendance Management System — SLT",
     cardTitle: "FRD Security Attendance System",
@@ -202,12 +293,13 @@ const PROJECTS = [
     ],
     live: "",
     repo: "https://github.com/yourname/frd-attendance",
-    cover: "/projects/frd/cover.jpg",
+    cover: "/projects/frd/cover.png",
     shots: [
-      { label: "Login screen", src: "/projects/frd/1.jpg" },
-      { label: "Manager dashboard", src: "/projects/frd/2.jpg" },
-      { label: "Approval history", src: "/projects/frd/3.jpg" },
-      { label: "Monthly report", src: "/projects/frd/4.jpg" },
+      { label: "Login screen", src: "/projects/frd/1.png" },
+      { label: "Manager dashboard", src: "/projects/frd/2.png" },
+      { label: "Approval history", src: "/projects/frd/3.png" },
+      { label: "Monthly report", src: "/projects/frd/4.png" },
+      { label: "Schedule shifts", src: "/projects/frd/5.png" },
     ],
     hue: 210,
   },
@@ -233,12 +325,12 @@ const PROJECTS = [
     ],
     live: "",
     repo: "https://github.com/yourname/skillsync",
-    cover: "/projects/skillsync/cover.jpg",
+    cover: "/projects/skillsync/cover.png",
     shots: [
-      { label: "Landing page", src: "/projects/skillsync/1.jpg" },
-      { label: "Job listings", src: "/projects/skillsync/2.jpg" },
-      { label: "Freelancer profile", src: "/projects/skillsync/3.jpg" },
-      { label: "Client dashboard", src: "/projects/skillsync/4.jpg" },
+      { label: "Landing page", src: "/projects/skillsync/1.png" },
+      { label: "Job listings", src: "/projects/skillsync/2.png" },
+      { label: "Freelancer profile", src: "/projects/skillsync/3.png" },
+      { label: "Client dashboard", src: "/projects/skillsync/4.png" },
     ],
     hue: 175,
   },
@@ -265,10 +357,7 @@ const PROJECTS = [
     repo: "https://github.com/yourname/legend-of-the-numenor",
     cover: "/projects/numenor/cover.jpg",
     shots: [
-      { label: "Title screen", src: "/projects/numenor/1.jpg" },
-      { label: "Gameplay", src: "/projects/numenor/gameplay.mp4" },
-      { label: "Level select", src: "/projects/numenor/3.jpg" },
-      { label: "Score screen", src: "/projects/numenor/4.jpg" },
+      { label: "Title screen", src: "/projects/numenor/cover.jpg" }
     ],
     hue: 30,
   },
@@ -399,6 +488,7 @@ function Photo({ src, alt, className = "", imgClassName = "", fallback, hue = 21
 function Media({ src, label, hue = 210, className = "", big = false }) {
   const [failed, setFailed] = useState(false);
   const isVideo = /\.(mp4|webm|mov)$/i.test(src || "");
+  const mediaStyle = { aspectRatio: "1600 / 900" };
 
   if (!src || failed) {
     return <Placeholder label={label} hue={hue} big={big} className={className} />;
@@ -415,6 +505,7 @@ function Media({ src, label, hue = 210, className = "", big = false }) {
         playsInline
         aria-label={label}
         className={`object-cover ${className}`}
+        style={mediaStyle}
       />
     );
   }
@@ -425,6 +516,7 @@ function Media({ src, label, hue = 210, className = "", big = false }) {
       alt={label}
       onError={() => setFailed(true)}
       className={`object-cover ${className}`}
+      style={mediaStyle}
     />
   );
 }
